@@ -26,15 +26,3 @@ images.forEach(image => {
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'title',
 });
-
-function handlerClickImg(event) {
-  if (event.target === galleryRef) {
-    return;
-  }
-  event.preventDefault();
-  const target = event.target;
-  const imageSource = target.dataset.source;
-  lightbox.open([{ src: imageSource }]);
-}
-
-galleryRef.addEventListener('click', handlerClickImg);
